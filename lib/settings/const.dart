@@ -12,6 +12,6 @@ class Const {
 
   static Color get iconsColor => Color(0xFFE0E0E0);
 
-  static Color get backgroundColor => Color(0xFFEEEEEE);
+  static Color get backgroundColor => Colors.white;
 
 }

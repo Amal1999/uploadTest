@@ -5,6 +5,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:upload_test/settings/config.dart';
 import 'package:upload_test/ui/screens/home/widget/divider_navbar.dart';
 import 'package:upload_test/ui/screens/home/home_screen.dart';
+import 'package:upload_test/ui/screens/publication/upload_screen.dart';
 import '../../../settings/const.dart';
 
 class Navbar extends StatefulWidget {
@@ -38,17 +39,15 @@ class _NavbarState extends State<Navbar> {
               ),
               label: '',
               activeIcon: Center(
-                child: Container(
-                  child: Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      SvgPicture.asset(
-                        "assets/icons/Home Black color.svg",
-                        matchTextDirection: true,
-                      ),
-                      divider()
-                    ],
-                  ),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/Home Black color.svg",
+                      matchTextDirection: true,
+                    ),
+                    divider()
+                  ],
                 ),
               )),
           BottomNavigationBarItem(
@@ -66,17 +65,15 @@ class _NavbarState extends State<Navbar> {
               ),
               label: '',
               activeIcon: Center(
-                child: Container(
-                  child: Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: [
-                      SvgPicture.asset(
-                        "assets/icons/Plus.svg",
-                        matchTextDirection: true,
-                      ),
-                      divider()
-                    ],
-                  ),
+                child: Stack(
+                  alignment: AlignmentDirectional.center,
+                  children: [
+                    SvgPicture.asset(
+                      "assets/icons/Plus.svg",
+                      matchTextDirection: true,
+                    ),
+                    divider()
+                  ],
                 ),
               )),
           BottomNavigationBarItem(
@@ -106,7 +103,7 @@ class _NavbarState extends State<Navbar> {
     } else if (selectedIndex == 1) {
       return const Text('hello2');
     } else {
-      return const Text('hello');
+      return UploadScreen();
       // return this._myProfile;
     }
     return const Text('hello');
