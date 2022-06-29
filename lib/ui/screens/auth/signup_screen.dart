@@ -170,12 +170,6 @@ class _SignupScreenState extends State<SignupScreen> {
                     }
                   },
                 );
-               /* onGenerateRoute: () async{
-                  if (response != null) {
-                    return MaterialPageRoute(builder: (_) => Navbar()); // Pass it to BarPage.
-                  }
-                  return null; // Let `onUnknownRoute` handle this behavior.
-                };*/
 
               }),
           SizedBox(

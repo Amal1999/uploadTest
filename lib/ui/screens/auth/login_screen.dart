@@ -9,6 +9,7 @@ import 'package:upload_test/ui/screens/auth/widgets/login_field.dart';
 import 'package:upload_test/utils/string_utility.dart';
 
 import '../../../viewmodels/auth_viewmodel.dart';
+import '../home/navbar.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -76,9 +77,19 @@ class _LoginScreenState extends State<LoginScreen> {
           AuthButton(
               bgColor: Const.firstDarkColor,
               content: "Log in",
-              onPressed: () async {
-                await AuthViewModel().login(email, password);
-              }),
+              onPressed: ()async {
+                AuthViewModel().login(email,password).then(
+                      (value) {
+                    print("before if " + value.toString());
+                    if (value) {
+                      print('valueee');
+                      print(value);
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => Navbar()));
+                    }
+                  },
+                );
+              }
+              ),
           SizedBox(
             height: context.height * .03,
           ),
@@ -108,9 +119,18 @@ class _LoginScreenState extends State<LoginScreen> {
             imageUrl: "assets/icons/google.svg",
             bgColor: Const.thirdDarkColor,
             content: "Log in with Google",
-            onPressed: () async {
-              await AuthViewModel().LoginWithGoogle();
-            },
+              onPressed: ()async {
+                AuthViewModel().LoginWithGoogle().then(
+                      (value) {
+                    print("before if " + value.toString());
+                    if (value) {
+                      print('valueee');
+                      print(value);
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => Navbar()));
+                    }
+                  },
+                );
+              }
           )
         ],
       ),

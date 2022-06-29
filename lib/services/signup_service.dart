@@ -3,8 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:awesome_dialog/awesome_dialog.dart';
 
 class SignupService {
-  static Future<bool> signup(
-      String firstname, String name, String email, String password) async {
+  static Future<bool> signup(String firstname, String name, String email, String password) async {
     bool val = false;
     try {
       var result = await FirebaseAuth.instance.createUserWithEmailAndPassword(
