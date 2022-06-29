@@ -6,14 +6,16 @@ import '../services/login_service.dart';
 
 class AuthViewModel extends ChangeNotifier
 {
-  Future login(String email, String password) async{
-    await LoginService.login(email,password);
+  Future<bool> login(String email, String password) async{
+    var login = await LoginService.login(email,password);
+    return login;
   }
   Future<bool> signup(String firstname,String name, String email, String password)  async {
       var signedUp =  await SignupService.signup(firstname,name,email,password);
       return signedUp;
   }
-  Future LoginWithGoogle() async {
-    await LoginService.signInWithGoogle();
+  Future<bool> LoginWithGoogle() async {
+    var log = await LoginService.signInWithGoogle();
+    return log;
   }
 }
